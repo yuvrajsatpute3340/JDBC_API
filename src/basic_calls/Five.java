@@ -11,8 +11,8 @@ public class Five {
 	public static void main(String[] args) throws SQLException {
 		
 		try(Connection con=DriverManager.getConnection("jdbc:mysql://localhost:3306/book","root","Yuvraj@3340");
-		PreparedStatement stmt=con.prepareStatement("select * from book;");)
-		{
+		PreparedStatement stmt=con.prepareStatement("insert into book values(1,'sita');");)
+			{
 			boolean flag=stmt.execute();
 			if(flag)
 			{
