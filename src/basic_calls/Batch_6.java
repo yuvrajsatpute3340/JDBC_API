@@ -3,17 +3,17 @@ package basic_calls;
 import java.sql.*;
 import java.util.*;
 
-public class Batch_5 {
+public class Batch_6 {
 
     public static void main(String[] args) throws Exception {
 
-        List<Product> list = new ArrayList<>();
+        List<Productt> list = new ArrayList<>();
 
-        list.add(new Product(101, "Laptop", 65000));
-        list.add(new Product(102, "Mobile", 25000));
-        list.add(new Product(103, "Headphones", 2000));
-        list.add(new Product(104, "Keyboard", 1500));
-        list.add(new Product(105, "Mouse", 800));
+        list.add(new Productt(101, "Laptop", 65000));
+        list.add(new Productt(102, "Mobile", 25000));
+        list.add(new Productt(103, "Headphones", 2000));
+        list.add(new Productt(104, "Keyboard", 1500));
+        list.add(new Productt(105, "Mouse", 800));
 
         try (
             Connection con = DriverManager.getConnection(
@@ -25,7 +25,7 @@ public class Batch_5 {
 
             con.setAutoCommit(false);
 
-            for (Product p : list) {
+            for (Productt p : list) {
 
                 stmt.setInt(1, p.id);
                 stmt.setString(2, p.name);
@@ -45,13 +45,13 @@ public class Batch_5 {
     }
 }
 
-class Product {
+class Productt {
 
     int id;
     String name;
     double price;
 
-    Product(int id, String name, double price) {
+    Productt(int id, String name, double price) {
         this.id = id;
         this.name = name;
         this.price = price;
