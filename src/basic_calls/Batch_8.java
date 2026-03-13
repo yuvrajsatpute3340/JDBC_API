@@ -16,7 +16,7 @@ public class Batch_8 {
 
         try (
             Connection con = DriverManager.getConnection(
-                    "jdbc:mysql://localhost:3306/batch", "root", "Yuvraj@3340");
+                    "jdbc:mysql://localhost:3306/book", "root", "Yuvraj@3340");
 
             PreparedStatement stmt =
                     con.prepareStatement("INSERT INTO Studentt VALUES (?,?,?)");
